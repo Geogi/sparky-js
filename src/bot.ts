@@ -1,4 +1,4 @@
-import { Client, Message } from "discord.js";
+import {Client, Message} from "discord.js";
 import priv from "./private.json";
 
 const client = new Client();
