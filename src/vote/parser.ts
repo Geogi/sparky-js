@@ -1,5 +1,5 @@
 export {
-    voteParser,
+    parser,
 };
 
 import * as P from "parsimmon";
@@ -22,7 +22,7 @@ import {
 type Group = Day[] | Placeholder.Rest;
 type Full = [Group[], Group];
 
-const voteParser = P.createLanguage<{
+const parser = P.createLanguage<{
     day: Day;
     group: Group;
     order: Group[];

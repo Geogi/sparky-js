@@ -1,4 +1,4 @@
 // TODO: normalizer
-import {voteParser} from "./parser";
+import {parser} from "./parser";
 
-process.stdout.write(JSON.stringify(voteParser));
+process.stdout.write(JSON.stringify(parser));
