@@ -17,6 +17,7 @@ client.on("message", async (message) => {
         await response.react("🇻");
         await response.react("🇸");
         await response.react("🇩");
+        await response.react("🚫");
     }
 });
 
