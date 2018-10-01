@@ -19,6 +19,13 @@ client.on("message", async (message) => {
         await response.react("🇩");
         await response.react("🚫");
     }
+
+    if (message.content === "/join" && message.member.voiceChannel) {
+        message.member.voiceChannel.join()
+            .then((connection) => {
+                connection.playFile("test.wav");
+            });
+    }
 });
 
 client.login(priv.TOKEN);
