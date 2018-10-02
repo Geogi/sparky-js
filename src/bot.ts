@@ -23,7 +23,10 @@ client.on("message", async (message) => {
     if (message.content === "/join" && message.member.voiceChannel) {
         message.member.voiceChannel.join()
             .then((connection) => {
-                connection.playFile("test.wav");
+                const dispatcher = connection.playFile("test.flac");
+                dispatcher.on("end", () => {
+                    connection.disconnect();
+                });
             });
     }
 });
