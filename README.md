@@ -1,0 +1,2 @@
+# sparky
+Discord Exylobby Bot
