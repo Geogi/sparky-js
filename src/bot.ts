@@ -1,4 +1,5 @@
 import {Client, Message} from "discord.js";
+import t from "./i18n";
 import privateConfig from "./private.json";
 
 const client = new Client();
@@ -9,15 +10,15 @@ client.on("ready", () => {
 
 client.on("message", async (message): Promise<void> => {
     if (message.content === "/simple") {
-        const response = await message.channel.send("Quel jour ?") as Message;
-        await response.react("🇱");
-        await response.react("🇦");
-        await response.react("🇪");
-        await response.react("🇯");
-        await response.react("🇻");
-        await response.react("🇸");
-        await response.react("🇩");
-        await response.react("🚫");
+        const response = await message.channel.send(t("whichDay")) as Message;
+        await response.react(t("emoteD1"));
+        await response.react(t("emoteD2"));
+        await response.react(t("emoteD3"));
+        await response.react(t("emoteD4"));
+        await response.react(t("emoteD5"));
+        await response.react(t("emoteD6"));
+        await response.react(t("emoteD7"));
+        await response.react(t("emoteNo"));
     }
 });
 
