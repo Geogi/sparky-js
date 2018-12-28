@@ -2,7 +2,7 @@ import i18next from "i18next";
 import frFr from "./messages/fr_fr";
 
 // noinspection SpellCheckingInspection
-const m = i18next.init({
+const i18n = i18next.init({
     lng: "fr",
     resources: {
         fr: {
@@ -11,4 +11,4 @@ const m = i18next.init({
     },
 });
 
-export default m.t;
+export default i18n;
