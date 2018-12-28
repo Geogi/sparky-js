@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/bot.js\""
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/index.js\""
   },
   "devDependencies": {
     "@types/core-js": "^2.5.0",
@@ -28,6 +28,7 @@
     "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",
     "erlpack": "^0.1.2",
-    "i18next": "^13.0.1"
+    "i18next": "^13.0.1",
+    "winston": "^3.1.0"
   }
 }

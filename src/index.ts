@@ -1,16 +1,17 @@
 import {Client, Message} from "discord.js";
 import i18n from "./i18n";
+import logger from "./logger";
 import privateConfig from "./private.json";
 
 const client = new Client();
 
 client.on("ready", () => {
-    process.stdout.write("ready!");
+    logger.info("ready!");
 });
 
 client.on("message", async (message): Promise<void> => {
-    const t = await i18n;
     if (message.content === "/simple") {
+        const t = await i18n;
         const response = await message.channel.send(t("whichDay")) as Message;
         await response.react(t("emoteD1"));
         await response.react(t("emoteD2"));
@@ -23,4 +24,6 @@ client.on("message", async (message): Promise<void> => {
     }
 });
 
-client.login(privateConfig.TOKEN).then();
+client.login(privateConfig.TOKEN).catch((r) => {
+    logger.error(r);
+});
