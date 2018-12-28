@@ -8,22 +8,26 @@
     "url": "ssh://arch@basevm/home/git/sparky.git"
   },
   "scripts": {
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/bot.js\"",
-    "tsc": "tsc"
+    "build": "tsc",
+    "test": "jest",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/bot.js\""
   },
   "devDependencies": {
     "@types/core-js": "^2.5.0",
-    "@types/i18next": "^11.9.3",
-    "@types/node": "^10.12.9",
-    "concurrently": "^4.0.1",
-    "nodemon": "^1.18.6",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "@types/i18next": "^12.1.0",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
   },
   "dependencies": {
+    "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",
-    "erlpack": "github:discordapp/erlpack",
-    "i18next": "^12.0.0",
-    "uws": "^9.148.0"
+    "erlpack": "^0.1.2",
+    "i18next": "^13.0.1"
   }
 }

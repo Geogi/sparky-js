@@ -1,5 +1,5 @@
 import {Client, Message} from "discord.js";
-import t from "./i18n";
+import i18n from "./i18n";
 import privateConfig from "./private.json";
 
 const client = new Client();
@@ -9,6 +9,7 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message): Promise<void> => {
+    const t = await i18n;
     if (message.content === "/simple") {
         const response = await message.channel.send(t("whichDay")) as Message;
         await response.react(t("emoteD1"));
