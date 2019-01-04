@@ -1,27 +1,27 @@
-import {Client, Message} from "discord.js";
-import t from "./i18n";
+import {CommandoClient, SQLiteProvider} from "discord.js-commando";
+import * as path from "path";
+import * as sqlite from "sqlite";
+import "sqlite/main";
+import commands from "./commands";
 import logger from "./logger";
 import privateConfig from "./private.json";
 
-const client = new Client();
-
-client.on("ready", () => {
-    logger.info("ready!");
+const client = new CommandoClient({
+    owner: "190183362294579211",
 });
 
-client.on("message", async (message): Promise<void> => {
-    if (message.content === "/simple") {
-        const response = await message.channel.send(t.whichDay) as Message;
-        await response.react(t.emoteD1);
-        await response.react(t.emoteD2);
-        await response.react(t.emoteD3);
-        await response.react(t.emoteD4);
-        await response.react(t.emoteD5);
-        await response.react(t.emoteD6);
-        await response.react(t.emoteD7);
-        await response.react(t.emoteNo);
-    }
-});
+client.setProvider(
+    sqlite.open(path.join(__dirname, "settings.sqlite3"))
+        .then((db) => new SQLiteProvider(db))
+        .then(null))
+    .then(null);
+
+client.registry
+    .registerDefaults()
+    .registerGroups([
+        ["rp", "Real-life Roleplay"],
+    ])
+    .registerCommands(commands(client));
 
 client.login(privateConfig.TOKEN).catch((r) => {
     logger.error(r);
