@@ -1,6 +1,6 @@
 {
   "name": "sparky",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A glorious bot for Exylobby",
   "license": "MIT",
   "repository": {
@@ -13,22 +13,23 @@
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/index.js\""
   },
   "devDependencies": {
-    "@types/core-js": "^2.5.0",
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.18",
-    "concurrently": "^4.1.0",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.9",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.12.0",
-    "typescript": "^3.2.2"
+    "@types/core-js": "^2.5.2",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@discordjs/uws": "^10.149.0",
     "bufferutil": "^4.0.1",
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
-    "erlpack": "^0.1.2",
-    "sqlite": "^3.0.0",
-    "winston": "^3.1.0"
+    "erlpack": "^0.1.3",
+    "sqlite": "^2.9.3",
+    "winston": "^3.2.1"
   }
 }
