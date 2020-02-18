@@ -1,12 +1,13 @@
 import {Message} from "discord.js";
 import {Command, CommandMessage, CommandoClient} from "discord.js-commando";
 import t from "../i18n";
+import groups from "../groups";
 
 class Simple extends Command {
     constructor(client: CommandoClient) {
         super(client, {
             description: "Prompts for a day of the week using reactions.",
-            group: "rp",
+            group: groups.rp,
             memberName: "simple",
             name: "simple",
         });

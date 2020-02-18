@@ -3,7 +3,10 @@ import * as path from "path";
 import * as sqlite from "sqlite";
 import "sqlite/main";
 import commands from "./commands";
-import privateConfig from "./private.json";
+import * as dotenv from "dotenv";
+import groups from "./groups";
+
+dotenv.config();
 
 const client = new CommandoClient({
     owner: "190183362294579211",
@@ -18,8 +21,9 @@ client.setProvider(
 client.registry
     .registerDefaults()
     .registerGroups([
-        ["rp", "Real-life Roleplay"],
+        [groups.rp, "Real-life Roleplay"],
+        [groups.util, "More Utility"],
     ])
     .registerCommands(commands(client));
 
-client.login(privateConfig.TOKEN).then();
+client.login(process.env.DISCORD_TOKEN).then();
