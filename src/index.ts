@@ -3,7 +3,6 @@ import * as path from "path";
 import * as sqlite from "sqlite";
 import "sqlite/main";
 import commands from "./commands";
-import logger from "./logger";
 import privateConfig from "./private.json";
 
 const client = new CommandoClient({
@@ -23,6 +22,4 @@ client.registry
     ])
     .registerCommands(commands(client));
 
-client.login(privateConfig.TOKEN).catch((r) => {
-    logger.error(r);
-});
+client.login(privateConfig.TOKEN).then();

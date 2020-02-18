@@ -8,19 +8,12 @@
     "url": "ssh://arch@basevm/home/git/sparky.git"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/index.js\""
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/core-js": "^2.5.2",
-    "@types/jest": "^25.1.2",
     "@types/node": "^13.7.1",
-    "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
-    "jest": "^25.1.0",
-    "nodemon": "^2.0.2",
-    "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
@@ -29,7 +22,6 @@
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
     "erlpack": "^0.1.3",
-    "sqlite": "^2.9.3",
-    "winston": "^3.2.1"
+    "sqlite": "^2.9.3"
   }
 }
