@@ -2,7 +2,7 @@
   "name": "sparky",
   "version": "1.0.2",
   "description": "A glorious bot for Exylobby",
-  "license": "MIT",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "ssh://arch@basevm/home/git/sparky.git"
