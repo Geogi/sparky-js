@@ -1,5 +1,5 @@
 import frFr from "./messages/fr_fr";
 
-const lang: IMessages = frFr;
+const lang: Messages = frFr;
 
 export default lang;

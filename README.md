@@ -1,2 +1,2 @@
-# sparky
-Discord Exylobby Bot
+# Sparky
+A glorious bot for Exylobby

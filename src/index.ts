@@ -3,26 +3,29 @@ import * as path from "path";
 import * as sqlite from "sqlite";
 import "sqlite/main";
 import commands from "./commands";
-import logger from "./logger";
-import privateConfig from "./private.json";
+import * as dotenv from "dotenv";
+import groups from "./groups";
+
+dotenv.config();
 
 const client = new CommandoClient({
     owner: "190183362294579211",
 });
 
+process.stdout.write(path.join(__dirname, "settings.sqlite3"));
+
 client.setProvider(
     sqlite.open(path.join(__dirname, "settings.sqlite3"))
         .then((db) => new SQLiteProvider(db))
-        .then(null))
-    .then(null);
+        .then())
+    .then();
 
 client.registry
     .registerDefaults()
     .registerGroups([
-        ["rp", "Real-life Roleplay"],
+        [groups.rp, "Real-life Roleplay"],
+        [groups.util, "More Utility"],
     ])
     .registerCommands(commands(client));
 
-client.login(privateConfig.TOKEN).catch((r) => {
-    logger.error(r);
-});
+client.login(process.env.DISCORD_TOKEN).then();

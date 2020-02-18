@@ -1,4 +1,4 @@
-interface IMessages {
+interface Messages {
     emoteD1: string;
     emoteD2: string;
     emoteD3: string;
