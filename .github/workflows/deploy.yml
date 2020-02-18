@@ -11,7 +11,7 @@ env:
 
 jobs:
   deploy:
-    name: Pack, Connect, Transfer, Update, Restart
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 13.x
+      - run: npm install
       - run: npm run pack
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
