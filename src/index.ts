@@ -12,11 +12,13 @@ const client = new CommandoClient({
     owner: "190183362294579211",
 });
 
+process.stdout.write(path.join(__dirname, "settings.sqlite3"));
+
 client.setProvider(
     sqlite.open(path.join(__dirname, "settings.sqlite3"))
         .then((db) => new SQLiteProvider(db))
-        .then(null))
-    .then(null);
+        .then())
+    .then();
 
 client.registry
     .registerDefaults()

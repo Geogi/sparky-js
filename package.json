@@ -8,13 +8,18 @@
     "url": "ssh://arch@basevm/home/git/sparky.git"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pack": "webpack"
   },
   "devDependencies": {
     "@types/core-js": "^2.5.2",
     "@types/node": "^13.7.1",
     "eslint": "^6.8.0",
-    "typescript": "^3.7.5"
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@discordjs/uws": "^10.149.0",
